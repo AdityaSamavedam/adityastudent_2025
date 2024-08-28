@@ -1,11 +1,3 @@
----
-layout: base
-title: Student Home 
-description: Home Page
-hide: true
----
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,6 +10,7 @@ hide: true
             color: #333;
             margin: 0;
             padding: 0;
+            transition: background-color 0.5s, color 0.5s;
         }
 
         header {
@@ -25,6 +18,7 @@ hide: true
             color: white;
             padding: 10px 20px;
             text-align: center;
+            transition: background-color 0.5s;
         }
 
         h1 {
@@ -50,6 +44,11 @@ hide: true
             height: auto;
             display: block;
             margin: 20px 0;
+            transition: transform 0.3s;
+        }
+
+        img:hover {
+            transform: scale(1.1);
         }
 
         .about-me ul {
@@ -64,20 +63,60 @@ hide: true
         .highlight {
             color: fuchsia;
         }
+
+        .dark-mode {
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+        }
+
+        .dark-mode header {
+            background-color: #000;
+        }
+
+        .dark-mode a {
+            color: lightgreen;
+        }
+
+        .dark-mode button {
+            background-color: #444;
+            color: #f0f0f0;
+        }
+
+        .quote {
+            font-style: italic;
+            color: lime;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 20px 0;
+            cursor: pointer;
+            background-color: #333;
+            color: white;
+            border: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background-color: limegreen;
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>🌟 Aditya Samavedam's Blog 🌟</h1>
+        <button id="toggleDarkMode">Toggle Dark Mode</button>
     </header>
     <div class="content">
         <h2>Check out my <a href="https://github.com/AdityaSamavedam" target="_blank">Github page</a>!</h2>
 
         <h3>🌌 The Reykjavik Northern Lights are Beautiful 🌌</h3>
-        <img src="/images/NorthernLights.jpg" alt="Northern Lights">
+        <img src="./images/NorthernLights.jpg" alt="Northern Lights">
 
         <h3>🎨 My Freeform Picture 🎨</h3>
-        <img src="/images/FreeformPicture.png" alt="Freeform Picture">
+        <img src="./images/FreeformPicture.png" alt="Freeform Picture">
 
         <h3>🎓 About Me 🎓</h3>
         <div class="about-me">
@@ -92,18 +131,35 @@ hide: true
                 <li>Loves to play <span style="color:tomato">Mario Kart Wii</span> and <span style="color:orangered">Brawl Stars</span>.</li>
             </ul>
         </div>
-        <img src="/images/mario-kart.gif" alt="Mario Kart Wii GIF">
+        <img src="./images/mario-kart.gif" alt="Mario Kart Wii GIF">
         <h3>Best song in the world: <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" target="_blank" style="color:turquoise">Click this link !!!</a></h3>
+        <button id="quoteButton">Show Me a Motivational Quote</button>
+        <div class="quote" id="quote"></div>
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Example: Adding an alert when a user clicks on the best song link
-            const bestSongLink = document.querySelector('a[href="https://www.youtube.com/watch?v=xvFZjo5PgG0"]');
-            
-            bestSongLink.addEventListener('click', function(event) {
-                alert("Get ready for the best song ever!");
-            });
+        // Dark Mode Toggle
+        document.getElementById('toggleDarkMode').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+        });
+
+        // Motivational Quote Generator
+        const quotes = [
+            "Believe you can and you're halfway there.",
+            "The only way to do great work is to love what you do.",
+            "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+            "Don't watch the clock; do what it does. Keep going.",
+            "The future belongs to those who believe in the beauty of their dreams."
+        ];
+
+        document.getElementById('quoteButton').addEventListener('click', function() {
+            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+            document.getElementById('quote').textContent = randomQuote;
+        });
+
+        // Alert for Best Song Link
+        document.querySelector('a[href="https://www.youtube.com/watch?v=xvFZjo5PgG0"]').addEventListener('click', function(event) {
+            alert("Get ready for the best song ever!");
         });
     </script>
 </body>
