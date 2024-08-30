@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Color Background</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="content">
+        <h1>Move Your Mouse!</h1>
+        <p>Watch the background color change based on your cursor's position.</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.content {
+    text-align: center;
+    color: white;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.5em;
+}
+</style>
+<script>
+  document.addEventListener('mousemove', (event) => {
+    // Get the mouse position
+    let x = event.clientX / window.innerWidth;
+    let y = event.clientY / window.innerHeight;
+
+    // Calculate RGB values based on mouse position
+    let red = Math.round(x * 255);
+    let green = Math.round(y * 255);
+    let blue = Math.round((1 - x) * 255);
+
+    // Set the background color
+    document.body.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+});
+</script>
