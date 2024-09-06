@@ -1,3 +1,9 @@
+---
+layout: page
+title: About Me
+description: a webpage about me (Aditya Samavedam)
+permalink: /index/
+---
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -135,6 +141,9 @@
         <h3>Best song in the world: <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" target="_blank" style="color:turquoise">Click this link !!!</a></h3>
         <button id="quoteButton">Show Me a Motivational Quote</button>
         <div class="quote" id="quote"></div>
+        <img src="./images/Flags/CaliforniaFlag.png" alt="California Flag">
+        <img src="./images/Flags/IndiaFlag.png" alt="India Flag">
+        <img src="./images/Flags/USAFlag.png" alt="USA Flag">
     </div>
 
     <script>
