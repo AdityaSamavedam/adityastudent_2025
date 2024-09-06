@@ -2,8 +2,8 @@ title: Nighthawk Pages
 description: "Class of 2025"
 owner_name: Aditya Samavedam
 github_username: AdityaSamavedam
-github_repo: "student_2025" 
-baseurl: "/student_2025"
+github_repo: "adityastudent_2025" 
+baseurl: "/adityastudent_2025"
 future: true
 remote_theme: jekyll/minima
 minima:
