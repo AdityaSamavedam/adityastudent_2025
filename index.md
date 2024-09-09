@@ -367,3 +367,11 @@ function showSlides(n) {
         alert("Get ready for the best song ever!");
     });
 </script>
+
+<script src="https://utteranc.es/client.js"
+        repo="AdityaSamavedam/adityastudent_2025"
+        issue-term="pathname"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+</script>
